@@ -1,9 +1,6 @@
 .heading {
-    background: purple;
-    color: black;
-}
-
-.cyan {
-    background: cyan;
-    color: wheat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
 }
