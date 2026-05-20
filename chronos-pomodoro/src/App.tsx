@@ -5,7 +5,9 @@ import './styles/global.css';
 export function App() {
     return (
         <>
-            <Heading />
+            <Heading attr='String' attr2={123}>
+                Chronos Pomodoro
+            </Heading>
             <p>
                 Bem-vindo ao Chronos Pomodoro! Este é um aplicativo para
                 ajudá-lo a gerenciar seu tempo usando a técnica Pomodoro.
