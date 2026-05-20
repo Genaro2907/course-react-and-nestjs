@@ -1,7 +1,11 @@
+import { Heading } from './components/Heading';
+import './styles/theme.css';
+import './styles/global.css';
+
 export function App() {
     return (
         <>
-            <h1>Chronos Pomodoro</h1>
+            <Heading />
             <p>
                 Bem-vindo ao Chronos Pomodoro! Este é um aplicativo para
                 ajudá-lo a gerenciar seu tempo usando a técnica Pomodoro.
