@@ -63,6 +63,18 @@ export function MainForm() {
                 activeTask: null,
                 secondsRemaining: 0,
                 formattedSecondsRemaining: '00:00',
+                tasks: prevState.tasks.map(task => {
+                    if (
+                        prevState.activeTask?.id &&
+                        prevState.activeTask.id === task.id
+                    ) {
+                        return {
+                            ...task,
+                            interruptDate: Date.now(),
+                        };
+                    }
+                    return task;
+                }),
             };
         });
     }
@@ -90,7 +102,7 @@ export function MainForm() {
             )}
 
             <div className='formRow'>
-                {!state.activeTask ? (
+                {!state.activeTask && (
                     <DefaultButton
                         aria-label='Iniciar tarefa'
                         title='Iniciar tarefa'
@@ -98,7 +110,9 @@ export function MainForm() {
                         icon={<PlayCircleIcon />}
                         key='botão_submit'
                     />
-                ) : (
+                )}
+
+                {!!state.activeTask && (
                     <DefaultButton
                         aria-label='Interromper tarefa atual'
                         title='Interromper tarefa atual'
